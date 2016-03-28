@@ -14,7 +14,10 @@
 		E9EA7F9F1CA9880E00B61BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7F9E1CA9880E00B61BE6 /* Assets.xcassets */; };
 		E9EA7FA21CA9880E00B61BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7FA01CA9880E00B61BE6 /* LaunchScreen.storyboard */; };
 		E9EA7FAB1CA988A500B61BE6 /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */; };
-		E9EA7FB21CA98F6A00B61BE6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FB11CA98F6A00B61BE6 /* HomeViewController.m */; };
+		E9EA7FB51CA9A11900B61BE6 /* UserSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */; };
+		E9EA7FB81CA9A11E00B61BE6 /* QuestionSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */; };
+		E9EA7FBE1CA9A21200B61BE6 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */; };
+		E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +32,14 @@
 		E9EA7FA31CA9880E00B61BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9EA7FA91CA988A500B61BE6 /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
 		E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
-		E9EA7FB01CA98F6A00B61BE6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		E9EA7FB11CA98F6A00B61BE6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E9EA7FB31CA9A11900B61BE6 /* UserSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchViewController.h; sourceTree = "<group>"; };
+		E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchViewController.m; sourceTree = "<group>"; };
+		E9EA7FB61CA9A11E00B61BE6 /* QuestionSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSearchViewController.h; sourceTree = "<group>"; };
+		E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSearchViewController.m; sourceTree = "<group>"; };
+		E9EA7FBC1CA9A21200B61BE6 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ../MenuTableViewController.h; sourceTree = "<group>"; };
+		E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ../MenuTableViewController.m; sourceTree = "<group>"; };
+		E9EA7FBF1CA9A28100B61BE6 /* BurgerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerContainerViewController.h; sourceTree = "<group>"; };
+		E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +104,14 @@
 			children = (
 				E9EA7FA91CA988A500B61BE6 /* OAuthViewController.h */,
 				E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */,
-				E9EA7FB01CA98F6A00B61BE6 /* HomeViewController.h */,
-				E9EA7FB11CA98F6A00B61BE6 /* HomeViewController.m */,
+				E9EA7FBC1CA9A21200B61BE6 /* MenuTableViewController.h */,
+				E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */,
+				E9EA7FB31CA9A11900B61BE6 /* UserSearchViewController.h */,
+				E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */,
+				E9EA7FB61CA9A11E00B61BE6 /* QuestionSearchViewController.h */,
+				E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */,
+				E9EA7FBF1CA9A28100B61BE6 /* BurgerContainerViewController.h */,
+				E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -189,11 +204,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EA7FBE1CA9A21200B61BE6 /* MenuTableViewController.m in Sources */,
+				E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */,
 				E9EA7F941CA9880D00B61BE6 /* AppDelegate.m in Sources */,
+				E9EA7FB81CA9A11E00B61BE6 /* QuestionSearchViewController.m in Sources */,
 				E9EA7F9D1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld in Sources */,
 				E9EA7F911CA9880D00B61BE6 /* main.m in Sources */,
-				E9EA7FB21CA98F6A00B61BE6 /* HomeViewController.m in Sources */,
 				E9EA7FAB1CA988A500B61BE6 /* OAuthViewController.m in Sources */,
+				E9EA7FB51CA9A11900B61BE6 /* UserSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

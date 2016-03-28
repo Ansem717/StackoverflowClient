@@ -56,6 +56,13 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
     
     if ([requestURL.description containsString:@"access_token"]) {
         [self getAndStoreAccessTokenFromURL:requestURL];
+        
+        NSLog(@"%@", self.completion);
+        
+        if (self.completion) {
+            self.completion();
+        }
+        
     }
     
     decisionHandler(WKNavigationActionPolicyAllow);

@@ -28,14 +28,24 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *accessToken = [defaults stringForKey:@"accessToken"];
     
+    NSLog(@"%@", accessToken);
+    
     if (!accessToken) {
         [self getAccessToken];
     }
+
 }
 
 - (void)getAccessToken {
     UIViewController *rootViewController = self.window.rootViewController;
     OAuthViewController *oAuthVC = [[OAuthViewController alloc]init];
+    
+    __weak typeof(oAuthVC) weakOAuth = oAuthVC;
+    oAuthVC.completion = ^() {
+        
+        [weakOAuth.view removeFromSuperview];
+        [weakOAuth removeFromParentViewController];
+    };
     
     [rootViewController addChildViewController:oAuthVC];
     [rootViewController.view addSubview:oAuthVC.view];

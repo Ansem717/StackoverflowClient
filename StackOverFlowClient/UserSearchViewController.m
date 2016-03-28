@@ -1,18 +1,18 @@
 //
-//  HomeViewController.m
+//  UserSearchViewController.m
 //  StackOverFlowClient
 //
 //  Created by Andy Malik on 3/28/16.
 //  Copyright © 2016 Ansem717. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "UserSearchViewController.h"
 
-@interface HomeViewController ()
+@interface UserSearchViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation UserSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,5 +33,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
++(NSString *)identifier {
+    return @"UserSearchViewController";
+}
 
 @end
