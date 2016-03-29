@@ -19,18 +19,22 @@ NSString * const kSOAPIBaseURL = @"https://api.stackexchange.com/2.2/";
     NSString * orderParam = @"desc";
     NSString * siteParam = @"stackoverflow";
     
-    NSString * searchURL = [NSString stringWithFormat:@"%@search?order=%@&sort=%@&intitle%@&site=%@", kSOAPIBaseURL, orderParam, sortParam, formattedSearchTerm, siteParam];
+    NSString * searchURL = [NSString stringWithFormat:@"%@search?order=%@&sort=%@&intitle=%@&site=%@", kSOAPIBaseURL, orderParam, sortParam, formattedSearchTerm, siteParam];
+    
+    
+    NSLog(@"%@", searchURL);
     
     
     [APIService getRequestWithURLString:searchURL andCompletion:^(NSDictionary * _Nullable data, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"ERROR IN COMPLETION: %@", [error localizedDescription]);
+            NSLog(@"ERROR 002: %@", [error localizedDescription]);
             completionHandler(nil, error);
             return;
         }
-        NSLog(@"YAY! A THINGY DEE THING!");
         completionHandler(data, nil);
     }];
 }
+
+//+ (void)getAnswersForQuestionID:(
 
 @end

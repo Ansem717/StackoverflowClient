@@ -7,8 +7,17 @@
 //
 
 #import "QuestionSearchViewController.h"
+#import "StackOverflowService.h"
+#import "JSONParser.h"
+#import "Question.h"
+#import "User.h"
 
-@interface QuestionSearchViewController ()
+@interface QuestionSearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *questionResultsTableView;
+
+@property (strong, nonatomic) NSArray<Question *> *datasourceQuestions;
 
 @end
 
@@ -16,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.searchBar setPlaceholder:@"Search for a question on Stack Overflow"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,18 +33,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 +(NSString *)identifier {
     return @"QuestionSearchViewController";
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.datasourceQuestions.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.questionResultsTableView dequeueReusableCellWithIdentifier:@"questionCell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = self.datasourceQuestions[indexPath.row].title;
+    
+    return cell;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [StackOverflowService searchWithTerm:searchBar.text withCompletion:^(NSDictionary * _Nullable data, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"ERROR IN QUESTION-VC SEARCH: %@", [error localizedDescription]);
+        }
+        self.datasourceQuestions = [JSONParser questionsArrayFromDictionary:data];
+        [self.questionResultsTableView reloadData];
+    }];
+    [self resignFirstResponder];
 }
 
 @end

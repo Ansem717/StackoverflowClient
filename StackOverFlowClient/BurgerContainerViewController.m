@@ -200,7 +200,7 @@ NSTimeInterval const kSlideCloseDuration = 0.3;
 
 - (void)switchToViewController:(UIViewController *)viewController {
     
-    [self setupChildViewController:viewController onScreen:YES];
+//    [self setupChildViewController:viewController onScreen:YES];
     
     
     [UIView animateWithDuration:kSlideOpenDuration animations:^{

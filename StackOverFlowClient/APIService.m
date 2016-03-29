@@ -14,12 +14,11 @@
 +(void)getRequestWithURLString:(NSString * __nonnull)urlString andCompletion:(APIServiceCompletionHandler)completionHandler {
     AFHTTPSessionManager *myManager = [AFHTTPSessionManager manager];
     [myManager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"JSON: %@", responseObject);
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(responseObject, nil);
         });
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"ERROR: %@", [error localizedDescription]);
+        NSLog(@"ERROR 001: %@", [error localizedDescription]);
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(nil, error);
         });
