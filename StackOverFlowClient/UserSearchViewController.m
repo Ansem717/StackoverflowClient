@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.searchBar setPlaceholder:@"Search for a user on Stack Overflow"];
 }
 
 - (void)didReceiveMemoryWarning {
