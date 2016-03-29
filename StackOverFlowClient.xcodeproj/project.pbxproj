@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		E9EA7F911CA9880D00B61BE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F901CA9880D00B61BE6 /* main.m */; };
 		E9EA7F941CA9880D00B61BE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */; };
-		E9EA7F971CA9880D00B61BE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F961CA9880D00B61BE6 /* ViewController.m */; };
 		E9EA7F9A1CA9880D00B61BE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7F981CA9880D00B61BE6 /* Main.storyboard */; };
 		E9EA7F9D1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F9B1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld */; };
 		E9EA7F9F1CA9880E00B61BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7F9E1CA9880E00B61BE6 /* Assets.xcassets */; };
 		E9EA7FA21CA9880E00B61BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7FA01CA9880E00B61BE6 /* LaunchScreen.storyboard */; };
+		E9EA7FAB1CA988A500B61BE6 /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */; };
+		E9EA7FB51CA9A11900B61BE6 /* UserSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */; };
+		E9EA7FB81CA9A11E00B61BE6 /* QuestionSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */; };
+		E9EA7FBE1CA9A21200B61BE6 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */; };
+		E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +25,21 @@
 		E9EA7F901CA9880D00B61BE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9EA7F921CA9880D00B61BE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9EA7F951CA9880D00B61BE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9EA7F961CA9880D00B61BE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E9EA7F991CA9880D00B61BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9EA7F9C1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StackOverFlowClient.xcdatamodel; sourceTree = "<group>"; };
 		E9EA7F9E1CA9880E00B61BE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9EA7FA11CA9880E00B61BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9EA7FA31CA9880E00B61BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9EA7FA91CA988A500B61BE6 /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
+		E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
+		E9EA7FB31CA9A11900B61BE6 /* UserSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchViewController.h; sourceTree = "<group>"; };
+		E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchViewController.m; sourceTree = "<group>"; };
+		E9EA7FB61CA9A11E00B61BE6 /* QuestionSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSearchViewController.h; sourceTree = "<group>"; };
+		E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSearchViewController.m; sourceTree = "<group>"; };
+		E9EA7FBC1CA9A21200B61BE6 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ../MenuTableViewController.h; sourceTree = "<group>"; };
+		E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ../MenuTableViewController.m; sourceTree = "<group>"; };
+		E9EA7FBF1CA9A28100B61BE6 /* BurgerContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerContainerViewController.h; sourceTree = "<group>"; };
+		E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +72,10 @@
 		E9EA7F8E1CA9880D00B61BE6 /* StackOverFlowClient */ = {
 			isa = PBXGroup;
 			children = (
-				E9EA7F921CA9880D00B61BE6 /* AppDelegate.h */,
-				E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */,
-				E9EA7F951CA9880D00B61BE6 /* ViewController.h */,
-				E9EA7F961CA9880D00B61BE6 /* ViewController.m */,
-				E9EA7F981CA9880D00B61BE6 /* Main.storyboard */,
-				E9EA7F9E1CA9880E00B61BE6 /* Assets.xcassets */,
-				E9EA7FA01CA9880E00B61BE6 /* LaunchScreen.storyboard */,
-				E9EA7FA31CA9880E00B61BE6 /* Info.plist */,
-				E9EA7F9B1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld */,
+				E9EA7FAC1CA988AE00B61BE6 /* App Global */,
+				E9EA7FAF1CA98A4500B61BE6 /* Model */,
+				E9EA7FAD1CA98A1700B61BE6 /* Controllers */,
+				E9EA7FAE1CA98A2F00B61BE6 /* View */,
 				E9EA7F8F1CA9880D00B61BE6 /* Supporting Files */,
 			);
 			path = StackOverFlowClient;
@@ -80,6 +87,51 @@
 				E9EA7F901CA9880D00B61BE6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9EA7FAC1CA988AE00B61BE6 /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				E9EA7F921CA9880D00B61BE6 /* AppDelegate.h */,
+				E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */,
+				E9EA7FA31CA9880E00B61BE6 /* Info.plist */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
+		E9EA7FAD1CA98A1700B61BE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9EA7FA91CA988A500B61BE6 /* OAuthViewController.h */,
+				E9EA7FAA1CA988A500B61BE6 /* OAuthViewController.m */,
+				E9EA7FBC1CA9A21200B61BE6 /* MenuTableViewController.h */,
+				E9EA7FBD1CA9A21200B61BE6 /* MenuTableViewController.m */,
+				E9EA7FB31CA9A11900B61BE6 /* UserSearchViewController.h */,
+				E9EA7FB41CA9A11900B61BE6 /* UserSearchViewController.m */,
+				E9EA7FB61CA9A11E00B61BE6 /* QuestionSearchViewController.h */,
+				E9EA7FB71CA9A11E00B61BE6 /* QuestionSearchViewController.m */,
+				E9EA7FBF1CA9A28100B61BE6 /* BurgerContainerViewController.h */,
+				E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E9EA7FAE1CA98A2F00B61BE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9EA7F981CA9880D00B61BE6 /* Main.storyboard */,
+				E9EA7F9E1CA9880E00B61BE6 /* Assets.xcassets */,
+				E9EA7FA01CA9880E00B61BE6 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E9EA7FAF1CA98A4500B61BE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9EA7F9B1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +204,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9EA7F971CA9880D00B61BE6 /* ViewController.m in Sources */,
+				E9EA7FBE1CA9A21200B61BE6 /* MenuTableViewController.m in Sources */,
+				E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */,
 				E9EA7F941CA9880D00B61BE6 /* AppDelegate.m in Sources */,
+				E9EA7FB81CA9A11E00B61BE6 /* QuestionSearchViewController.m in Sources */,
 				E9EA7F9D1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld in Sources */,
 				E9EA7F911CA9880D00B61BE6 /* main.m in Sources */,
+				E9EA7FAB1CA988A500B61BE6 /* OAuthViewController.m in Sources */,
+				E9EA7FB51CA9A11900B61BE6 /* UserSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

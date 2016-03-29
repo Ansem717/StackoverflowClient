@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BurgerContainerViewController.h
 //  StackOverFlowClient
 //
 //  Created by Andy Malik on 3/28/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface BurgerContainerViewController : UIViewController
 
++(NSString *)identifier;
 
 @end
-

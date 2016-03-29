@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "OAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self checkForAccessToken];
+    
     return YES;
+}
+
+- (void)checkForAccessToken {
+    OAuthViewController *oAuthVC = [[OAuthViewController alloc]init];
+    NSString *accessToken = [oAuthVC getAccessTokenFromKeychain];
+    
+    NSLog(@"access token from keychain == %@", accessToken);
+    
+    if (!accessToken) {
+        [self getAccessToken];
+    }
+
+}
+
+- (void)getAccessToken {
+    UIViewController *rootViewController = self.window.rootViewController;
+    OAuthViewController *oAuthVC = [[OAuthViewController alloc]init];
+    
+    __weak typeof(oAuthVC) weakOAuth = oAuthVC;
+    oAuthVC.completion = ^() {
+        
+        [weakOAuth.view removeFromSuperview];
+        [weakOAuth removeFromParentViewController];
+    };
+    
+    [rootViewController addChildViewController:oAuthVC];
+    [rootViewController.view addSubview:oAuthVC.view];
+    [oAuthVC didMoveToParentViewController:rootViewController];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
