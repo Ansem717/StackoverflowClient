@@ -25,10 +25,10 @@
 }
 
 - (void)checkForAccessToken {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *accessToken = [defaults stringForKey:@"accessToken"];
+    OAuthViewController *oAuthVC = [[OAuthViewController alloc]init];
+    NSString *accessToken = [oAuthVC getAccessTokenFromKeychain];
     
-    NSLog(@"%@", accessToken);
+    NSLog(@"access token from keychain == %@", accessToken);
     
     if (!accessToken) {
         [self getAccessToken];

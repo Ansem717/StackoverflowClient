@@ -11,6 +11,8 @@
 #import "QuestionSearchViewController.h"
 #import "UserSearchViewController.h"
 
+
+
 CGFloat const kBurgerOpenScreenDivider = 2.5;
 CGFloat const kBurgerOpenScreenMultipler = 1.8;
 CGFloat const kBurgerButtonWidth = 70;
@@ -134,7 +136,7 @@ NSTimeInterval const kSlideCloseDuration = 0.3;
         [UIView animateWithDuration:kSlideCloseDuration animations:^{
             weakSelf.topViewController.view.center = menuCloseLocation;
         } completion:^(BOOL finished) {
-            NSLog(@"Too short! Not locking!");
+            NSLog(@"Pan motion cut short - Closing menu...");
         }];
     }
 }
@@ -212,6 +214,7 @@ NSTimeInterval const kSlideCloseDuration = 0.3;
         }];
     }];
 }
+
 
 @end
 

@@ -13,6 +13,7 @@ typedef void(^OAuthVCCompletion)();
 @interface OAuthViewController : UIViewController
 
 @property (strong, nonatomic) OAuthVCCompletion completion;
+- (NSString *)getAccessTokenFromKeychain;
 
 
 @end

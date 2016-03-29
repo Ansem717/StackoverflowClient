@@ -12,6 +12,7 @@
 static NSString const *kClientID = @"6797";
 static NSString const *kBaseURL = @"https://stackexchange.com/oauth/dialog";
 static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_success";
+static NSString *const kAccessTokenKey = @"kAccessTokenKey";
 
 @interface OAuthViewController () <WKNavigationDelegate>
 
@@ -23,7 +24,6 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setUpWebView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -33,7 +33,6 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)setUpWebView {
@@ -43,9 +42,6 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
     NSURL *stackURL = [NSURL URLWithString:stackURLString];
     self.webView.navigationDelegate = self;
     [self.webView loadRequest:[NSURLRequest requestWithURL:stackURL]];
-    
-//    [[UIApplication sharedApplication]openURL:stackURL];
-    
 }
 
 #pragma mark - Web View Delegate
@@ -54,10 +50,10 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
     NSURLRequest *request = navigationAction.request;
     NSURL *requestURL = request.URL;
     
+    NSLog(@"requestURL on WebView Delegate: %@", requestURL.description);
+    
     if ([requestURL.description containsString:@"access_token"]) {
         [self getAndStoreAccessTokenFromURL:requestURL];
-        
-        NSLog(@"%@", self.completion);
         
         if (self.completion) {
             self.completion();
@@ -71,7 +67,6 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
 - (void)getAndStoreAccessTokenFromURL:(NSURL *)url {
     NSCharacterSet *separatingCharacters = [NSCharacterSet characterSetWithCharactersInString:@"#&?"];
     NSArray *urlComponents = [url.description componentsSeparatedByCharactersInSet:separatingCharacters];
-    NSLog(@"Key-Value pairing from URL Response {");
     for (NSString *component in urlComponents) {
         NSArray *componentsArray = [component componentsSeparatedByString:@"="];
         
@@ -80,17 +75,62 @@ static NSString const *kRedirectURI = @"https://stackexchange.com/oauth/login_su
             NSString *value = componentsArray[1];
             
             if (key && value) {
-                NSLog(@"   \"%@\" = %@", key, value);
-                [self saveStringToKeychain:value forKey:key];
+                if ([key isEqualToString:@"access_token"]) {
+                    [self saveAccessTokenToKeychain:value];
+                }
             }
         }
     }
-    NSLog(@"}");
 }
 
-- (void)saveStringToKeychain:(NSString *)value forKey:(NSString *)key {
-    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+- (void)saveAccessTokenToKeychain:(NSString *)token {
+    NSMutableDictionary *keychainQuery = [self getKeychainQuery:kAccessTokenKey];
+    
+    NSData * dataFromToken = [NSKeyedArchiver archivedDataWithRootObject:token];
+    
+    [keychainQuery setValue:dataFromToken forKey:(NSString *)kSecValueData];
+    CFDictionaryRef cfKeychainQuery = (__bridge CFDictionaryRef)keychainQuery;
+    SecItemDelete(cfKeychainQuery);
+    SecItemAdd(cfKeychainQuery, nil);
+    NSLog(@"Keychain Query Add Item: %@", cfKeychainQuery);
+}
+
+- (NSString *)getAccessTokenFromKeychain {
+    NSMutableDictionary *keychainQuery = [self getKeychainQuery:kAccessTokenKey];
+    [keychainQuery setValue:(NSNumber *)kCFBooleanTrue forKey:(NSString *)kSecReturnData];
+    [keychainQuery setValue:(NSNumber *)kSecMatchLimitOne forKey:(NSString *)kSecMatchLimit];
+    CFTypeRef dataRef;
+    CFDictionaryRef cfKeychainQuery = (__bridge CFDictionaryRef)keychainQuery;
+    
+    if (SecItemCopyMatching(cfKeychainQuery, &dataRef) == noErr) {
+        if (dataRef) {
+            NSData *dataFromRef = (__bridge NSData *)dataRef;
+            NSString *token = [NSKeyedUnarchiver unarchiveObjectWithData:dataFromRef];
+            return token;
+        }
+    }
+
+    NSLog(@"Keychain Query Search for Item: %@", cfKeychainQuery);
+
+    return nil;
+}
+
+- (NSMutableDictionary *)getKeychainQuery:(NSString *)query {
+    NSArray *keys = @[
+                      (NSString *)kSecClass,
+                      (NSString *)kSecAttrService,
+                      (NSString *)kSecAttrAccount,
+                      (NSString *)kSecAttrAccessible
+                      ];
+    NSArray *values = @[
+                        (NSString *) kSecClassGenericPassword,
+                        query,
+                        query,
+                        (NSString *) kSecAttrAccessibleAfterFirstUnlock
+                        ];
+    
+    NSMutableDictionary *keyandvalues = [[NSMutableDictionary alloc]initWithObjects:values forKeys:keys];
+    return keyandvalues;
 }
 
 
