@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OAuthViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
 
