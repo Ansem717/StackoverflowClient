@@ -13,5 +13,6 @@ typedef void(^APIServiceCompletionHandler)(NSDictionary * __nullable data, NSErr
 @interface StackOverflowService : NSObject
 
 +(void)searchWithTerm:(NSString * __nonnull)searchTerm withCompletion:(APIServiceCompletionHandler __nullable)completionHandler;
++(void)searchUserWithTerm:(NSString * __nonnull)searchTerm withCompletion:(APIServiceCompletionHandler __nullable)completionHandler;
 
 @end

@@ -7,8 +7,15 @@
 //
 
 #import "UserSearchViewController.h"
+#import "StackOverflowService.h"
+#import "JSONParser.h"
+#import "User.h"
 
-@interface UserSearchViewController ()
+@interface UserSearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *userResultsTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray<User *>* userDatasource;
 
 @end
 
@@ -16,26 +23,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 +(NSString *)identifier {
     return @"UserSearchViewController";
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.userDatasource.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [self.userResultsTableView dequeueReusableCellWithIdentifier:@"userCell" forIndexPath:indexPath];
+    cell.textLabel.text = self.userDatasource[indexPath.row].displayName;
+    return cell;
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self resignFirstResponder];
+    [StackOverflowService searchUserWithTerm:searchBar.text withCompletion:^(NSDictionary * _Nullable data, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+            return;
+        }
+        self.userDatasource = [JSONParser usersArrayFromDictionary:data];
+        [self.userResultsTableView reloadData];
+    }];
 }
 
 @end
