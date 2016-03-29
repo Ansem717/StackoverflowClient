@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E94EFC3C1CAB0A63007941F7 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E94EFC3B1CAB0A63007941F7 /* JSONParser.m */; };
+		E9A5F1121CAAE6B7000A304B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A5F1111CAAE6B7000A304B /* AFNetworking.framework */; };
+		E9A5F1141CAAE6D5000A304B /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9A5F1111CAAE6B7000A304B /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9A5F1191CAAF07F000A304B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A5F1181CAAF07F000A304B /* User.m */; };
+		E9A5F11C1CAAF097000A304B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A5F11B1CAAF097000A304B /* Question.m */; };
+		E9A5F11F1CAAF354000A304B /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A5F11E1CAAF354000A304B /* APIService.m */; };
+		E9A5F1221CAAF589000A304B /* StackOverflowService.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A5F1211CAAF589000A304B /* StackOverflowService.m */; };
 		E9EA7F911CA9880D00B61BE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F901CA9880D00B61BE6 /* main.m */; };
 		E9EA7F941CA9880D00B61BE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */; };
 		E9EA7F9A1CA9880D00B61BE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EA7F981CA9880D00B61BE6 /* Main.storyboard */; };
@@ -20,7 +27,32 @@
 		E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EA7FC01CA9A28100B61BE6 /* BurgerContainerViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E9A5F1151CAAE6D5000A304B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9A5F1141CAAE6D5000A304B /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E94EFC3A1CAB0A63007941F7 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		E94EFC3B1CAB0A63007941F7 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		E9A5F1111CAAE6B7000A304B /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		E9A5F1171CAAF07F000A304B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E9A5F1181CAAF07F000A304B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E9A5F11A1CAAF097000A304B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		E9A5F11B1CAAF097000A304B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		E9A5F11D1CAAF354000A304B /* APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIService.h; sourceTree = "<group>"; };
+		E9A5F11E1CAAF354000A304B /* APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIService.m; sourceTree = "<group>"; };
+		E9A5F1201CAAF589000A304B /* StackOverflowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowService.h; sourceTree = "<group>"; };
+		E9A5F1211CAAF589000A304B /* StackOverflowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowService.m; sourceTree = "<group>"; };
 		E9EA7F8C1CA9880D00B61BE6 /* StackOverFlowClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverFlowClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EA7F901CA9880D00B61BE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9EA7F921CA9880D00B61BE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A5F1121CAAE6B7000A304B /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +105,7 @@
 		E9EA7F8E1CA9880D00B61BE6 /* StackOverFlowClient */ = {
 			isa = PBXGroup;
 			children = (
+				E9A5F1111CAAE6B7000A304B /* AFNetworking.framework */,
 				E9EA7FAC1CA988AE00B61BE6 /* App Global */,
 				E9EA7FAF1CA98A4500B61BE6 /* Model */,
 				E9EA7FAD1CA98A1700B61BE6 /* Controllers */,
@@ -94,6 +128,12 @@
 			children = (
 				E9EA7F921CA9880D00B61BE6 /* AppDelegate.h */,
 				E9EA7F931CA9880D00B61BE6 /* AppDelegate.m */,
+				E9A5F11D1CAAF354000A304B /* APIService.h */,
+				E9A5F11E1CAAF354000A304B /* APIService.m */,
+				E9A5F1201CAAF589000A304B /* StackOverflowService.h */,
+				E9A5F1211CAAF589000A304B /* StackOverflowService.m */,
+				E94EFC3A1CAB0A63007941F7 /* JSONParser.h */,
+				E94EFC3B1CAB0A63007941F7 /* JSONParser.m */,
 				E9EA7FA31CA9880E00B61BE6 /* Info.plist */,
 			);
 			name = "App Global";
@@ -130,6 +170,10 @@
 			isa = PBXGroup;
 			children = (
 				E9EA7F9B1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld */,
+				E9A5F1171CAAF07F000A304B /* User.h */,
+				E9A5F1181CAAF07F000A304B /* User.m */,
+				E9A5F11A1CAAF097000A304B /* Question.h */,
+				E9A5F11B1CAAF097000A304B /* Question.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -144,6 +188,7 @@
 				E9EA7F881CA9880D00B61BE6 /* Sources */,
 				E9EA7F891CA9880D00B61BE6 /* Frameworks */,
 				E9EA7F8A1CA9880D00B61BE6 /* Resources */,
+				E9A5F1151CAAE6D5000A304B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,12 +251,17 @@
 			files = (
 				E9EA7FBE1CA9A21200B61BE6 /* MenuTableViewController.m in Sources */,
 				E9EA7FC11CA9A28100B61BE6 /* BurgerContainerViewController.m in Sources */,
+				E9A5F11F1CAAF354000A304B /* APIService.m in Sources */,
+				E9A5F1191CAAF07F000A304B /* User.m in Sources */,
 				E9EA7F941CA9880D00B61BE6 /* AppDelegate.m in Sources */,
 				E9EA7FB81CA9A11E00B61BE6 /* QuestionSearchViewController.m in Sources */,
 				E9EA7F9D1CA9880E00B61BE6 /* StackOverFlowClient.xcdatamodeld in Sources */,
 				E9EA7F911CA9880D00B61BE6 /* main.m in Sources */,
+				E9A5F1221CAAF589000A304B /* StackOverflowService.m in Sources */,
+				E9A5F11C1CAAF097000A304B /* Question.m in Sources */,
 				E9EA7FAB1CA988A500B61BE6 /* OAuthViewController.m in Sources */,
 				E9EA7FB51CA9A11900B61BE6 /* UserSearchViewController.m in Sources */,
+				E94EFC3C1CAB0A63007941F7 /* JSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StackOverFlowClient",
+				);
 				INFOPLIST_FILE = StackOverFlowClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ansem717.StackOverFlowClient;
@@ -334,6 +388,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StackOverFlowClient",
+				);
 				INFOPLIST_FILE = StackOverFlowClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ansem717.StackOverFlowClient;
@@ -360,6 +418,7 @@
 				E9EA7FA81CA9880E00B61BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

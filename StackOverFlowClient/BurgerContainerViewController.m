@@ -15,8 +15,8 @@
 
 CGFloat const kBurgerOpenScreenDivider = 2.5;
 CGFloat const kBurgerOpenScreenMultipler = 1.8;
-CGFloat const kBurgerButtonWidth = 70;
-CGFloat const kBurgerButtonHeight = 55;
+CGFloat const kBurgerButtonWidth = 65;
+CGFloat const kBurgerButtonHeight = 50;
 NSTimeInterval const kSlideOpenDuration = 0.25;
 NSTimeInterval const kSlideCloseDuration = 0.3;
 
@@ -199,6 +199,9 @@ NSTimeInterval const kSlideCloseDuration = 0.3;
 }
 
 - (void)switchToViewController:(UIViewController *)viewController {
+    
+//    [self setupChildViewController:viewController onScreen:YES];
+    
     
     [UIView animateWithDuration:kSlideOpenDuration animations:^{
         self.topViewController.view.frame = [self offScreenLocation];
