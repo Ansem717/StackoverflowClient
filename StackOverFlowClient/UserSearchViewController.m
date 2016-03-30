@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray<User *>* userDatasource;
 
+@property (strong, nonatomic) User * test;
+
 @end
 
 @implementation UserSearchViewController
@@ -24,6 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.searchBar setPlaceholder:@"Search for a user on Stack Overflow"];
+    
+    self.test = [[User alloc]initWithDisplayName:@"Test" andProfileImageURL:nil andLink:nil andUserID:100];
+    
+    [self addObserver:self forKeyPath:@"test.displayName" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    
+    self.test.displayName = @"A DIFF NAME!";
+    self.test.displayName = @"Proof of KVO Concept";
+    NSLog(@"Should print as 'Proof of KVO Concept', right? Well I changed it: %@", self.test.displayName);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +43,23 @@
 +(NSString *)identifier {
     return @"UserSearchViewController";
 }
+
+#pragma mark - KVO
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"test.displayName"]) {
+        NSLog(@"Name changed!");
+        NSLog(@"%@", change);
+        if ([change[@"new"] isEqualToString:@"Proof of KVO Concept"]) {
+            self.test.displayName = @"Nice Try!";
+        }
+    }
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"test.displayName"];
+}
+#pragma mark - Delegates and Datasource stuff
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.userDatasource.count;
