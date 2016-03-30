@@ -33,7 +33,7 @@
     
     self.test.displayName = @"A DIFF NAME!";
     self.test.displayName = @"Proof of KVO Concept";
-    NSLog(@"Should print as 'Proof of KVO Concept', right? NAME: %@", self.test.displayName);
+    NSLog(@"Should print as 'Proof of KVO Concept', right? Well I changed it: %@", self.test.displayName);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +49,7 @@
         NSLog(@"Name changed!");
         NSLog(@"%@", change);
         if ([change[@"new"] isEqualToString:@"Proof of KVO Concept"]) {
-            self.test.displayName = @"Well, nice try!";
+            self.test.displayName = @"Nice Try!";
         }
     }
 }
